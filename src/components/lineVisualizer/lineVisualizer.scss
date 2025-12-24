@@ -1,0 +1,67 @@
+.container {
+  max-width: 420px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Logo */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 500;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.lines {
+  margin-top: 24px;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.item {
+  width: 70px;
+  height: 14px;
+  border-radius: 20px;
+}
+
+/* Colors */
+.blue {
+  background-color: #3b82f6;
+}
+
+.green {
+  background-color: #22c55e;
+}
+
+.red {
+  background-color: #ef4444;
+}
+
+.yellow {
+  background-color: #facc15;
+}
