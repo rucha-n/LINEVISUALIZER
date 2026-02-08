@@ -43,7 +43,7 @@ const LineVisualizer: React.FC = () => {
 
       <div className="lines">
         <h1>
-          Hi Rucha Nutyalwar !!!
+          Hi Rucha Nutyalwar @@@ !!!
         </h1>
         {Array.from({ length: totalLines }).map((_, lineIndex) => (
           <div key={lineIndex} className="line">
