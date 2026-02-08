@@ -1,32 +1,24 @@
-# Stage 1: Build the React app
-FROM node:20-slim AS build
+# Use Node.js Alpine for small image
+FROM node:20-alpine
 
+# Set working directory inside container
 WORKDIR /app
 
-# Install deps
+# Copy package.json and package-lock.json first (for caching)
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install --force
 
-# Copy all source code
-COPY . .
+# Copy the rest of the app
+COPY . /app
 
-# Build the app → output goes to /app/dist
-RUN npm run build
-
-
-# Stage 2: Serve the app
-FROM node:20-slim
-
-WORKDIR /app
-
-RUN npm install -g serve
-
-# Copy the build output from stage 1
-COPY --from=build /app/dist ./dist
-
-# Set host environment variable
+# Set environment variable so dev server listens on all interfaces
 ENV HOST=0.0.0.0
+ENV PORT=3000
 
+# Expose the dev server port
 EXPOSE 3000
 
-CMD ["serve", "-s", "dist", "--listen", "3000"]
+# Start the development server
+CMD ["npm", "start"]
