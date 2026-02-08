@@ -42,6 +42,9 @@ const LineVisualizer: React.FC = () => {
       />
 
       <div className="lines">
+        <h1>
+          Hi Rucha
+        </h1>
         {Array.from({ length: totalLines }).map((_, lineIndex) => (
           <div key={lineIndex} className="line">
             {Array.from({ length: itemsPerLine }).map((_, itemIndex) => (
